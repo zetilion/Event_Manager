@@ -12,9 +12,12 @@ app.use(cors());
 // 📌 Importazione delle route
 const authRoutes = require('./routes/auth');
 const eventsRoutes = require('./routes/events');
+const bookingsRoutes = require('./routes/bookings')
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventsRoutes);
+app.use('/api/bookings', bookingsRoutes); 
 
 // 📌 Avvio del server
 const PORT = process.env.PORT || 5000;
