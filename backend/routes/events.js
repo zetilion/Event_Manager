@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// 📌 CREAZIONE EVENTO (FIXATO)
+// 📌 CREAZIONE EVENTO (Fixato)
 router.post('/create', (req, res) => {
     const { organizer_id, title, description, date, seats, image } = req.body;
 
@@ -18,8 +18,12 @@ router.post('/create', (req, res) => {
         return res.status(400).json({ error: "Tutti i campi sono obbligatori" });
     }
 
-    const sql = "INSERT INTO events (organizer_id, title, description, date, seats, available_seats, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    db.query(sql, [organizer_id, title, description, date, seats, seats, image], (err) => {
+    const sql = `
+        INSERT INTO events (organizer_id, title, description, date, seats, available_seats, image) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `;
+    
+    db.query(sql, [organizer_id, title, description, date, seats, seats, image || null], (err) => {
         if (err) return res.status(500).json({ error: "Errore nella creazione evento" });
         res.json({ message: "Evento creato con successo" });
     });
