@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Organizzatore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="container mt-4">
+    <h2>Dashboard Organizzatore</h2>
+    <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
+
+    <h3>Crea Nuovo Evento</h3>
+    <form id="create-event-form">
+        <input type="text" id="event-title" class="form-control my-2" placeholder="Titolo evento" required>
+        <input type="text" id="event-description" class="form-control my-2" placeholder="Descrizione evento" required>
+        <input type="datetime-local" id="event-date" class="form-control my-2" required>
+        <input type="number" id="event-seats" class="form-control my-2" placeholder="Posti disponibili" required>
+        <input type="text" id="event-image" class="form-control my-2" placeholder="URL immagine">
+        <button type="submit" class="btn btn-primary">Crea Evento</button>
+    </form>
+
+    <h3 class="mt-4">Lista Eventi</h3>
+    <div id="events-container" class="row"></div>
+</body>
+</html>
