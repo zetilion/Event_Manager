@@ -7,28 +7,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script defer src="script.js"></script>
 </head>
-<body class="container mt-5">
-    <h2 class="text-center">Accedi o Registrati</h2>
+<body class="bg-light">
 
-    <form id="login-form" class="w-50 mx-auto mt-4">
-        <h3>Login</h3>
-        <input type="email" id="email" class="form-control my-2" placeholder="Email" required>
-        <input type="password" id="password" class="form-control my-2" placeholder="Password" required>
-        <button type="submit" class="btn btn-success w-100">Accedi</button>
-    </form>
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-lg w-50">
+            <h2 class="text-center mb-4">Event Booking</h2>
 
-    <hr>
+            <ul class="nav nav-tabs" id="loginTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">Registrati</a>
+                </li>
+            </ul>
 
-    <form id="register-form" class="w-50 mx-auto mt-4">
-        <h3>Registrati</h3>
-        <input type="text" id="name" class="form-control my-2" placeholder="Nome" required>
-        <input type="email" id="register-email" class="form-control my-2" placeholder="Email" required>
-        <input type="password" id="register-password" class="form-control my-2" placeholder="Password" required>
-        <select id="role" class="form-control my-2">
-            <option value="utente">Utente</option>
-            <option value="organizzatore">Organizzatore</option>
-        </select>
-        <button type="submit" class="btn btn-primary w-100">Registrati</button>
-    </form>
+            <div class="tab-content mt-3">
+                <!-- LOGIN FORM -->
+                <div class="tab-pane fade show active" id="login">
+                    <form id="login-form">
+                        <input type="email" id="email" class="form-control my-2" placeholder="Email" required>
+                        <input type="password" id="password" class="form-control my-2" placeholder="Password" required>
+                        <button type="submit" class="btn btn-success w-100">Accedi</button>
+                    </form>
+                </div>
+
+                <!-- REGISTRAZIONE FORM -->
+                <div class="tab-pane fade" id="register">
+                    <form id="register-form">
+                        <input type="text" id="name" class="form-control my-2" placeholder="Nome" required>
+                        <input type="email" id="register-email" class="form-control my-2" placeholder="Email" required>
+                        <input type="password" id="register-password" class="form-control my-2" placeholder="Password" required>
+                        <select id="role" class="form-control my-2">
+                            <option value="utente">Utente</option>
+                            <option value="organizzatore">Organizzatore</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary w-100">Registrati</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
